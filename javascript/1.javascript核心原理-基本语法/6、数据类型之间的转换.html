@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型之间的转换</title>
+    <script>
+        //number,string,boolean,undefined,null
+        var a = 10;
+        var b = "";
+        var c = true;
+        var d = undefined;
+        var e = null;
+
+        /*
+            转数值
+                Number(值);
+                    字符串
+                        1、如果字符串中包含非0-9，-，+之间的字符，则转为NaN
+                        2、如果字符串中的字符全部属于0-9，则转为对应数值
+                    布尔值
+                        true转为1，false转为0
+                    undefined 转为NaN，null转为0；
+                parseInt(值)//从左到右检测字符是否属于0-9，如果属于则保留，如果不属于则抛弃且终止检测
+
+                parseFloat(值)//同上，但是多一个 .
+
+            转字符串
+                String(值);
+                    原样输出，只是数据类型变为字符串
+
+                .toString()//boolean\number\string都有一个toString()方法可以调用
+                    同上。
+
+            转布尔值
+                Boolean(值);
+                    1、任何非0数值都会转化为true
+                    2、任何非空字符串都会转化为true
+                    3、null和undefined都会转化为false
+        */
+        console.log(Boolean(null));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
