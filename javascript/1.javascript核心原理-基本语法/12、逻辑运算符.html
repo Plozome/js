@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>逻辑运算符</title>
+    <script>
+        /*
+			逻辑运算符(断点操作)
+
+				||(或)
+					先将符号前边转为布尔值
+						如果前边的值为true，则取前边的初始值
+						如果前边的值为false，则取后边的初始值
+
+				&&(与)
+					先将符号前边转为布尔值
+						如果前边的值为true，则取后边的初始值
+						如果前边的值为false，则取前边的初始值
+
+				！(非)
+					将符号后的值转化为布尔值，然后取相反值
+		*/
+
+        console.log(undefined || 1);
+
+        console.log(3 && undefined);
+
+        console.log(!1);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
