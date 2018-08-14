@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简易计算器</title>
+    <script>
+        function fn(a){
+            switch(a){
+                case "+": ipt3.value=Number(ipt1.value)+Number(ipt2.value);
+                break;
+                case "-": ipt3.value=ipt1.value-ipt2.value;
+                break;
+                case "*": ipt3.value=ipt1.value*ipt2.value;
+                break;
+                case "/": ipt3.value=ipt1.value/ipt2.value;
+                break;
+                case "%": ipt3.value=ipt1.value%ipt2.value;
+                break;
+                default:
+					alert("输入错误");
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <input id="ipt1" type="text" value="0">
+    <button onclick="fn('+')">+</button>
+    <button onclick="fn('-')">-</button>
+    <button onclick="fn('*')">*</button>
+    <button onclick="fn('/')">/</button>
+    <button onclick="fn('%')">%</button>
+    <input id="ipt2" type="text" value="0">
+    =
+    <input id="ipt3" type="text" value="0">
+
+</body>
+</html>

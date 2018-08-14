@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            if语句
+                1、最多只有一个分支会运行
+                2、判断条件会被隐式转换为布尔值
+                3、单分支的花括号可以省略
+                    if(true) alert(1);
+        */
+    
+    
+            //单分支
+            var xigua = 2;
+    
+            var bXhs = true;
+    
+            if(bXhs){
+                xigua = 4;
+            }
+    
+            alert(xigua);
+    
+        
+            //双分支
+            var sex = "女";
+    
+            if(sex=="女"){
+                alert('女试衣间');
+            }else{
+                alert('男试衣间');
+            }
+    
+            //多分支-成绩判定：大于90为优，大于80为优良，大于70为良，小于70为差。
+    
+            var score = 98;
+            if(score>=90&&score<=100){
+                alert("优");
+            }else if(score>=80&&score<90){
+                alert("优良");
+            }else if(score>=70&&score<80){
+                alert("良");
+            }else if(score>=0&&score<70){
+                alert("差");
+            }else{
+                alert("缺考");
+            }
+        </script>
+</body>
+</html>

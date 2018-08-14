@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 100px;
+            height: 32px;
+            line-height: 32px;
+            color: white;
+            text-align: center;
+            float: left;
+        }
+
+        .clearfix {
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        for (i = 1; i <= 9; i++) {
+            for (j = 1; j <= i; j++) {
+                document.write("<div style='background:rgb(" + parseInt(Math.random() * 256) + "," + parseInt(Math.random() * 256) + "," + parseInt(Math.random() * 256) + ")'>" + j + "*" + i + "=" + i * j + "</div>");
+            }
+            document.write("<span class='clearfix'></span>");
+        }
+    </script>
+</body>
+
+</html>

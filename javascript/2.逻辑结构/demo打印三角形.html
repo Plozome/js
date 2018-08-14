@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            line-height: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+
+        /*
+			1、打印一个星
+			2、打印十个星
+			3、打印十行十个星
+			4、打印三角形 第一行打印一个星，第二行答应二个星，第n行打印n个星
+			5、打印倒三角形 外层循环变量从大到小
+        */
+        /*1、打印一个星
+        document.write("*");
+       
+       //2、打印十个星
+       for(j=0;j<=9;j++){
+           document.write("*");
+       }
+        
+        //3、打印十行十个星
+        for (i = 0; i <= 9; i++) {
+            for (j = 0; j <= 9; j++) {
+                document.write("*");
+            }
+            document.write("<br />");
+        }
+        // 4、打印三角形
+        for (i = 0; i <= 9; i++) {
+            for (j = 0; j <= i; j++) {
+                document.write("*");
+            }
+            document.write("<br />");
+        }*/
+        //5、打印倒三角形
+        for (i = 9; i >=0; i--) {
+            for (j = 0; j <= i; j++) {
+                document.write("*");
+            }
+            document.write("<br />");
+        }
+    </script>
+</body>
+
+</html>
