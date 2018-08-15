@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        函数调用自身的编程技巧，称为递归
+        1、递归的规律
+        2、递归的出口条件
+        3、让递归的规律趋近于出口条件
+         */
+        /*
+        eg:猴子吃桃子每天吃前一天的一半多一个10天之后还剩下一个
+        即规律为fn（n）=(fn(n-1)+1)*2
+        */
+        function fn(n) {
+            if (n == 1) {
+                return 1 ;
+            } 
+            return (fn(n - 1) + 1) * 2
+        }
+        console.log(fn(10));
+    </script>
+
+</body>
+
+</html>

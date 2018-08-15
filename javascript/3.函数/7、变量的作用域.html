@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		/*
+			作用域：变量起作用的范围。
+
+			在全局内声明的变量拥有 全局作用域 ，可以在页面中的任何位置访问。
+			在函数内声明的变量拥有 局部作用域 ，只能在当前函数内部访问。
+		*/
+
+
+		var a = 10;
+
+		function fn(c) {
+
+			//console.log(a);
+
+			var b = 20;
+
+			function foo() {
+				var d = 30;
+			}
+
+			foo();
+
+			console.log(d);
+
+		}
+
+		fn();
+
+		console.log(c);
+
+
+
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

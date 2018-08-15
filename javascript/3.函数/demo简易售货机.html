@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="money" type="text" placeholder="输入钱数">
+    <button onclick="output()">投币</button>
+    <script>
+    
+        function machine(m){
+            switch(Number(m)){
+                case 3:
+                return "可口可乐";
+                case 5:
+                return "脉动";
+                case 10:
+                return "红牛";
+            } 
+            // alert(machine(money.value));//不用单独再定义output
+        }
+       function output(){
+           var drink = machine(money.value);
+           alert(drink);
+       }
+    </script>
+</body>
+
+</html>

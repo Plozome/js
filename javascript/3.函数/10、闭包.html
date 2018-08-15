@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //函数想要执行，就必须知道自身的变量和自身所在的作用域链中的位置
+        //函数保存自身变量信息和所在域链位置的现象，在计算机科学中称为闭包
+        var a = 10;
+        var b = 20;
+        function fn() {
+            var b = 30;
+            alert(a);
+            alert(b);
+        }
+        fn();
+    </script>
+</body>
+
+</html>

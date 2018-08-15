@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //函数的运行取决于函数定义时所在的作用域，不取决于函数调用时的作用域
+        //作用域链中的变量访问规则遵循 向上查找
+        var a = 10;
+        var b = 20;
+        function fn() {
+            alert(a);
+            var b = 30;
+            function foo() {
+                alert(b);//使用转到定义也能看到是在哪里定义的
+            }
+            foo();
+        }
+        fn();
+    </script>
+</body>
+
+</html>

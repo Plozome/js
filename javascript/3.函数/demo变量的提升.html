@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        alert(a);//1
+        var a = 10;
+        function fn() {
+            alert(a);//2
+            var b = 20;
+            /* 去掉var 就变成了赋值操作，会改变内存中的a的值 
+            第2个alert在fn内也找不到var a就会去外面去找 a 
+            所以第2个alert就会是10，第3个就是20 第4个也是20*/            
+            //a = 20;
+            a=30;
+
+            alert(b);//3
+        }
+        fn();
+        alert(a);//4
+    </script>
+</body>
+
+</html>
