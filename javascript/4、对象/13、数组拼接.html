@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //生成新数组的操作
+        var arr1 = [1, 2, 3, 4, 5];
+        var arr2 = ["a", "b", "c", "d", "e"];
+
+        var arr = arr1.concat(arr2, "%");//将arr1的元素和arr2的元素和%，全部放到新数组中
+
+        var arr3 = arr1.concat();//没有参数则代表arr1数组的拷贝
+
+        console.log(arr3, arr1);
+    </script>
+</body>
+
+</html>

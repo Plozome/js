@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+          对象的语法：
+                对象字面量使用{}表示，花括号内可以存储属性
+                属性名（key）与属性值（value）之间使用:连接
+                属性（键值对）与属性（键值对）之间使用,连接
+
+                可以通过 . 操作符访问对象下的属性
+                当属性名为表达式时，可以通过[]操作符访问对象下的属性
+        */
+        //var obj = {};//空对象
+        var obj ={
+            name:"jack",
+            age:18,
+            cn:ture
+        };//对象在数据结构中可以称为字典
+
+        //可以通过 . 操作符访问对象下的属性
+        console.log(obj.name);
+        console.log(obj.age);
+
+        //可以通过[]操作符访问对象下的属性
+        var a ="age";
+        console.log(obj[a]);
+    </script>
+</body>
+</html>

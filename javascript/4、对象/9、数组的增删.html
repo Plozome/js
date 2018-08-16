@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //属于改变原数组的操作
+        var arr=["小红","小明","小强"];
+        arr[arr.length]="小绿";
+      
+        arr.push("珍妮");//结尾添加元素
+        arr.pop();//结尾删除
+        arr.unshift("小兰");//开头添加
+        arr.shift();//开头删除
+
+        //添加之后返回值都是数组长度，删除返回值是被删除的元素
+        console.log(arr.push("珍妮"));//返回数组长度
+        console.log(arr.pop());//返回被删除的元素
+        console.log(arr.unshift("小兰"));//返回数组长度
+        console.log(arr.shift());//返回被删除的元素
+
+        console.log(arr);
+    </script>
+</body>
+</html>

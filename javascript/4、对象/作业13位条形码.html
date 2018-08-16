@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = new Array(12);
+        var sum1 = 0;//奇数和
+        var sum2 = 0;//偶数和
+        function ean13() {
+            for (i = 0; i < 12; i++) {
+                arr[i] = parseInt(Math.random() * 10)
+            }
+            return arr;
+        }
+        function fn1() {
+            ean13();
+            console.log(arr);
+            //因为数组下标是0开始所以数组的偶数位对应实际条码奇数位
+            for (i = 0; i < 12; i++) {
+                if (i % 2 == 0) {//偶数
+                    sum1 = sum1 + Number(arr[i]);
+                } else if (i % 2 == 1) {//奇数
+                    sum2 = sum2 + Number(arr[i]);
+                } else if (i == 0) {
+                    sum1 = sum1 + Number(arr[0]);
+                }
+            }
+            console.log("奇数位和是" + sum1);
+            console.log("偶数位和是" + sum2);
+            var sum = sum1 + sum2 * 3;
+            console.log("奇数位和偶数位的三倍和是" + sum);
+            var yanZhengMa = (10 - sum % 10) % 10;
+            console.log("第十三位验证码是" + yanZhengMa);
+            arr.push(yanZhengMa);
+            console.log(arr);
+        }
+        fn1();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" value="" id="jack">
+    <button onclick="randomName()">点名</button>
+    <script>
+        var arr = ["小王", "小李", "小白", "小黑", "狗子", "小二", "小红", "小兰"];
+        var arrlength = arr.length;
+        function randomName() {
+            jack.value = arr[parseInt(Math.random() * arrlength)];
+            // alert(arr[parseInt(Math.random() * arrlength)]);
+        }
+    </script>
+</body>
+
+</html>
