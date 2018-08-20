@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//不改变原数组，没有返回值
+
+		var arr = ["a","b","c","d","e","f","l"];
+
+		/* 数组遍历传统方法，兼容所有浏览器
+		for(var i=0; i<arr.length; i++){
+			console.log(arr[i]);
+		}
+		*/
+
+		arr.forEach(function(ele,index,arr){//数组中的元素, 元素的下标, 原数组
+			console.log(ele);
+		});
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

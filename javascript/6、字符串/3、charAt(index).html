@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+     /*
+        .charAt(index) //根据下标（index)获取字符
+     */
+
+     var str = "Snopy";
+     console.log(new String(str));
+
+     //字符串的遍历
+     for(var i=0;i<str.length;i++){
+            console.log(str.charAt(i));
+     }
+     //截取前3位字符
+     var str_copy="";
+     for(var i=0;i<3;i++){
+            str_copy+=str.charAt(i);
+     }
+     console.log(str_copy);
+    </script>
+  
+</body>
+</html>

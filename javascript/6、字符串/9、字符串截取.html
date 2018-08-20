@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            slice(截取起始下标，截取结束下标)
+        
+            var str = "asdafaf";
+            console.log(str.slice(0));//1个参数代表截取到最后
+            //从第一个参数截取到第二个参数，不包括第二个参数的字符
+            console.log(str.slice(str.indexOf('d'),str.indexOf('f')));
+            console.log(str.slice(-2));//负数代表从后往前数
+            console.log(str.slice(-5,-2));
+        */
+        /*
+            substring(截取起始下标，截取结束下标)；//参数为负数时转化为0
+
+        
+            var str = "我爱北京天安门";
+
+            console.log(str.substring(1,4));
+
+            console.log(str.substring(3));//第3个到最后
+        */
+
+        /*
+            substr(截取起始下标，截取个数);//起始下标允许负数
+        */
+            var str ="我爱北京天安门"
+            console.log(str.substr(-3,2));
+        
+    </script>
+</body>
+</html>

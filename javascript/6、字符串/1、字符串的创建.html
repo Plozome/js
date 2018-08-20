@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            1.字面量为值类型，字符串对象为引用数据类型。
+            2.两者相等为true，全等为false
+        */
+        var s = "abc";//字符串的字面量
+        console.log(s, typeof (s));
+        var str = new String("abc");//字符串对象
+        console.log(str,typeof(str));
+        console.log(s==str);
+        console.log(s===str);
+    </script>
+</body>
+
+</html>

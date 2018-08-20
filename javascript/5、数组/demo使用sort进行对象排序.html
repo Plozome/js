@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var arr = [{
+			name:"surface",
+			price:"12000",
+			hot:"9999"
+		},{
+			name:"lenovo",
+			price:"4999",
+			hot:"4080"
+		},{
+			name:"dell",
+			price:"8978",
+			hot:"5080"
+		},{
+			name:"mac",
+			price:"11999",
+			hot:"18790"
+		},{
+			name:"hp",
+			price:"8959",
+			hot:"300"
+		}];
+		//a大于b返回正数，a小于b返回负数，a等于b返回0，升序排序
+		//a大于b返回负数，a小于b返回正数，a等于b返回0，降序排序
+		arr.sort(function(a,b){
+			if(a.name > b.name){
+				return -1;
+			}else if(a.name < b.name){
+				return 1;
+			}else{
+				return 0;
+			}
+		});
+		console.log(arr);// 整个数组一起输出
+		//数组内对象一个一个输出
+		for(var i=0; i<arr.length; i++){
+			console.log(arr[i]);
+		}
+	</script>
+</body>
+</html>

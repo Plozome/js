@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var link = 'https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&wd=北京天安门&rsv_pq=b3216af900020fea&rsv_t=95d5L8nq8ymzuX9v1DCSbpe%2BOR%2BuXFZr1xMO643g%2FrUGGaVpzY1%2FpYYNOKU&rqlang=cn&rsv_enter=1&rsv_sug2=0&inputT=5501&rsv_sug4=9883&rsv_jmp=slow';
+         function getParam(link) {
+            var result = {};//创建空字符串用于接收数据
+
+            var sParam = link.split('?')[1];//先以？分成两部分，然后取后面一部分也就是位于数组1位的
+
+            var aParam = sParam.split('&');//将参数拆分为数组
+
+            for (var i = 0; i < aParam.length; i++) {
+
+                var Param = aParam[i].split('=');
+
+                result[Param[0]] = Param[1]
+            }
+            return result;
+         }
+        console.log(getParam(link));
+    </script>
+
+</body>
+
+</html>

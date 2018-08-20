@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //34632119880821042x
+        function parseStr(string, start, end) {//原字符串, 开头截取位数, 结尾截取位数
+            var nStar = string.length - start - end;//星号数量
+            var star = "";//星号字符串
+
+            for (var i = 0; i < nStar; i++) {//拼接星号
+                star += "*";
+            }
+
+            return string.slice(0, start) + star + string.slice(-end);
+        }
+    </Script>
+</body>
+
+</html>

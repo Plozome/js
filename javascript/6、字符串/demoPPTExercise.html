@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = "我觉得JavaScript是世界上最好的编程语言！你不信JavaScript是最好的编程语言吗？"
+        var sum = 0;//出现的次数
+        var i =0;   //开始查找的位置
+        while(true){
+            if(str.indexOf("编",i)==-1){
+                break;
+            }else{
+                sum++;
+                i=str.indexOf("编",i)+1;
+            }
+        }
+        console.log(sum);
+    </script>
+</body>
+
+</html>

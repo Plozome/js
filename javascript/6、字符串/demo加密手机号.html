@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="ipt">
+    <button onclick="ipt.value=parseStr(ipt.value,4,3)">提交</button>
+    <script>
+        function parseStr(string, start, end) {
+            var nstar = string.length - start - end;
+            var star = "";
+            for (var i = 0; i < nstar; i++) {
+                star += "*";
+            }
+            return string.slice(0, start) + star + string.slice(-end);
+        }
+    </script>
+</body>
+
+</html>
