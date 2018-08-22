@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var tel = "13923456789";
+        var reg = /\d{11}/;
+        console.log(reg.test(tel));
+        /*
+            {n} 匹配n个字符
+            {n，}匹配n至多个字符
+            {n，m} 匹配n至m个字符 例如用户名限制6-21位
+
+            * 匹配0至多个字符,{0,}
+            ? 匹配0至1个字符 {0,1}
+            + 匹配1至多个字符 {1，}
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            正则表达式在js中表现为内置对象
+
+            匹配规则:一些正则符号描述的规则
+            匹配模式：i代表不区分大小写，g代表全局匹配
+        */
+        var guize = "abc";
+
+        var reg = new RegExp(guize,"i");//匹配规则，匹配模式/ 使用构造函数创建正则对象
+         var reg2 = /abc/i;
+         console.log(reg.test("abcqwafagad"));//判断字符串里有没有abc
+         console.log(reg2.test("abcqwafagad"));
+    </script>
+</body>
+</html>

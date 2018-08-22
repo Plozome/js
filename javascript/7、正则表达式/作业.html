@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+			匹配手机号
+            /^1(32|39|30)\d{8}$/
+			匹配身份证号码 一代身份证15位
+            /(^\d{17}[\dxX]$)|(^\d{15}$)/
+			匹配用户名，只能包含数字字母下划线，不能以数字开头，6~21位
+            /^[A-z_]\w{5,20}$/
+			匹配邮箱 abc@def.com
+            /^([A-z0-9])+@([0-9A-z])+(\.[A-z0-9]+)+$/
+			必须包含数字字母下划线//这种情况1234ab_cd  ab_cd1234
+            /^(\d+[A-z_]+)|([A-z_]+\d+)[\w]*$/   
+            域名匹配
+            /^http|https:\/\/([A-z\d]+\.)*[A-z\d]+\.[A-z]{2,4}$/
+
+		*/
+        /*  var reg = /^1[37]\d{9}$/;
+            var tel = "15949596298";
+            console.log(reg.test(tel));
+
+            var reg1 = /\d{17}[0-9,x]/;
+            var IDcard = "41282919940503161x";
+            console.log(reg1.test(IDcard));
+        
+          var reg2 = /^[A-z_]\w{5,20}$/;
+          var userName = "a12345";
+          console.log(reg2.test(userName));
+        */
+            var reg3 =  /^([A-z0-9])+@([0-9A-z])+(\.[A-z0-9]+)+$/;
+            var emil = "871944587@qq.com.cn";
+            console.log(reg3.test(emil));
+    </script>
+</body>
+</html>

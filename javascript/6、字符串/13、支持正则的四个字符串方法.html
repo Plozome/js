@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//量词一般都是贪婪的，尽可能多的匹配
+		//量词后加 ? 可以成为非贪婪匹配，尽可能少的匹配
+
+		//split
+		var str = "a1b24567c37d";
+		console.log(str.split(/\d+/));
+
+		//replace
+		var str1 = "曲曲折折的荷塘上面，弥望(4)的是田田(5)的叶子。叶子出水很高，像亭亭的舞女的裙。层层的叶子中间，零星地点缀着些白花，有袅娜(6)地开着的，有羞涩地打着朵儿的；正如一粒粒的明珠曲曲折折，又如碧天里的星星，又如1234刚出浴的美人。微风过处，送曲曲折折来缕缕清香，仿佛远处高楼上渺茫的歌声似的。这时候叶子与花也有一丝的颤动，像闪电般，霎时传过荷塘的那边去了。叶子本是肩曲曲折折并肩密密地挨着，这便宛然有了一道凝曲曲折折碧的波痕。叶子底下是脉脉(7)的流水，遮住了，不能见一些颜色；而叶曲曲折折子却更见风致(8)了。";
+		console.log(str1.replace(/\d+/g,'**'));
+
+		//match
+		var str2 = "2018年08月21日 17点42分56秒";
+
+		console.log(str2.match(/\d+/g));
+		console.log(str2.match(/[\u4e00-\u9fa5]/g));
+
+		//search
+		var str3 = "abcdef#03ccb";
+		console.log(str3.search(/#[0-9a-fA-F]{6}/g));
+
+	</script>
+</body>
+</html>
