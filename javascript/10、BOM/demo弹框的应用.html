@@ -8,15 +8,12 @@
 </head>
 <body>
     <script>
-        var  str ="我爱北京天安门";
-        var str1="";
-        for(var i = str.length;i>=0;i--){
-                str1+= str.charAt(i)
+        var b =confirm("是否输入名称");
+        if(b){
+            alert("welcome"+prompt("Please enter your name"))
+        }else{
+            alert("你是一个游客");
         }
-        console.log(str1);
-        
-        console.log(Math);
-
     </script>
 </body>
 </html>

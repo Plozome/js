@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.watch{
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			margin: 20px auto;
+			border: solid 1px #000;
+			position: relative;
+		}
+		.watch:after{
+			content: "";
+			position: absolute;
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			background: #000;
+			left: 50%;
+			top: 50%;
+			margin-top: -6px;
+			margin-left: -6px;
+		}
+		.hour,.minute,.second{
+			left: 50%;
+			top: 50%;
+			transform-origin: center bottom ; 
+		}
+		.hour{
+			width: 6px;
+			height: 60px;
+			background: red;
+			position: absolute;
+			margin-left:-3px;
+			margin-top:-60px;
+		}
+		.minute{
+			width: 4px;
+			height: 70px;
+			background: green;
+			position: absolute;
+			margin-left:-2px;
+			margin-top:-70px;
+		}
+		.second{
+			width: 2px;
+			height: 80px;
+			background: blue;
+			position: absolute;
+			margin-left:-1px;
+			margin-top:-80px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="watch">
+		<span id="hour" class="hour"></span>
+		<span id="minute" class="minute"></span>
+		<span id="second" class="second"></span>
+	</div>
+
+	<script>
+
+	moveWatch();
+
+	setInterval(moveWatch,10);
+
+	function moveWatch(){
+		var date = new Date();
+
+		var nHour = date.getHours();
+		var nMinute = date.getMinutes();
+		var nSecond = date.getSeconds();
+
+
+		hour.style.transform = "rotate("+((30*nHour)+(nMinute/60*30))+"deg)";
+		minute.style.transform = "rotate("+6*nMinute+"deg)";
+		second.style.transform = "rotate("+6*nSecond+"deg)";
+	}
+
+
+	</script>
+</body>
+</html>

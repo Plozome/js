@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		div{
+			width: 40px;
+			height: 60px;
+			float: left;
+			background: no-repeat left top;
+		}
+		div.n0{
+			background-image: url(images/0.png);
+		}
+		div.n1{
+			background-image: url(images/1.png);
+		}
+		div.n2{
+			background-image: url(images/2.png);
+		}
+		div.n3{
+			background-image: url(images/3.png);
+		}
+		div.n4{
+			background-image: url(images/4.png);
+		}
+		div.n5{
+			background-image: url(images/5.png);
+		}
+		div.n6{
+			background-image: url(images/6.png);
+		}
+		div.n7{
+			background-image: url(images/7.png);
+		}
+		div.n8{
+			background-image: url(images/8.png);
+		}
+		div.n9{
+			background-image: url(images/9.png);
+		}
+		div.mh{
+			background-image: url(images/mh.png);
+		}
+		#box{
+			float: none;
+			width: 100%;
+			/* background-color: aqua; */
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		
+	</div>
+	<script>
+		var date = new Date();
+
+
+
+		var hour = date.getHours().toString();//12
+
+		if(hour<10){
+			hour = "0"+hour;
+		}
+
+		for(var i=0; i<hour.length; i++){
+			var html = "<div class='n"+hour.charAt(i)+"'></div>"
+			box.innerHTML += html;
+		}
+
+		box.innerHTML += "<div class='mh'></div>"
+
+
+		var minute = date.getMinutes().toString();//12
+
+		if(minute<10){
+			minute = "0"+minute;
+		}
+
+		for(var i=0; i<minute.length; i++){
+			var html = "<div class='n"+minute.charAt(i)+"'></div>"
+			box.innerHTML += html;
+		}
+
+		box.innerHTML += "<div class='mh'></div>"
+
+
+
+		var second = date.getSeconds().toString();//12
+
+		if(second<10){
+			second = "0"+second;
+		}
+
+		for(var i=0; i<second.length; i++){
+			var html = "<div class='n"+second.charAt(i)+"'></div>"
+			box.innerHTML += html;
+		}
+
+		box.innerHTML += "<div class='mh'></div>"
+
+		var millisecond = date.getMilliseconds().toString();//12
+
+		for(var i=0; i<millisecond.length; i++){
+			var html = "<div class='n"+millisecond.charAt(i)+"'></div>"
+			box.innerHTML += html;
+		}
+
+	</script>
+</body>
+</html>

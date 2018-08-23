@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            两个日期的差为毫秒数
+
+            每个日期对象，都有一个毫秒数可以通过 getTime()方法获取
+                日期对象的毫秒数是从1970年1月1日0时0分0秒开始计算的
+        */
+        date1 = new Date("2018-08-22");
+        date2 = new Date("2018-08-21");
+        console.log(date1-date2);
+        console.log(date1.getTime()-date2.getTime());//结果一样，都是返回毫秒
+    </script>
+</body>
+</html>

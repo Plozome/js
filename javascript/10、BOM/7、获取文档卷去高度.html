@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body style="height:10000px; width: 10000px">
+    <script>
+        /*
+            文档卷去高度
+                document.documentElement.scrollTop
+            
+            文档卷去宽度
+                document.documentElement.scrollLeft
+        */
+        window.onscroll = function () {
+            //使用document.documentElement.scrollTop时Edge不能正确显示结果
+            console.log(document.body.scrollTop);
+        }
+    </script>
+</body>
+
+</html>

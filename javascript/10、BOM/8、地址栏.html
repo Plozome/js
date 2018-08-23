@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <button onclick="fn()">跳转到天猫</button>
+
+        <input type="text" value=""/>
+        <input type="submit">
+    
+        <button onclick="location.reload(true)">重新加载页面</button>
+
+        <script>
+                /*
+                    location 地址栏对象
+        
+                    location.reload()  重新加载页面，参数为true时不采用浏览器缓存
+                */
+        
+                function fn(){
+                    location.assign("https://www.tmall.com");
+                }
+        
+                console.log(location);
+        
+                console.log(location.href);//http://www.baidu.com/s/?wd=1802&json=1
+        
+                console.log(location.protocol);//协议
+        
+                console.log(location.port);//端口号
+        
+                console.log(location.host);//主机地址
+        
+                console.log(location.pathname);//路径名
+        
+                console.log(location.search);//参数
+        
+        
+            </script>
+</body>
+</html>

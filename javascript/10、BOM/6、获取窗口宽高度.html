@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0; /* 不设置会默认有8px的边距 */
+            padding: 0;       
+        }
+    </style>
+</head>
+<body>
+    <script>
+        /*
+            innerWidth/innerHeight
+                不兼容IE8以下的浏览器
+            document.documentElement.clientWidth/cilentHeight
+                document.documentElement指htmly元素
+            document.body.clientWidth/clientHeight
+                document.body指body元素  结果不包括边框
+            offsetWidth/offsetHeight
+                包含边框
+        */
+        console.log(window.innerWidth);
+        console.log(window.innerHeight);
+        console.log(document.documentElement.clientWidth);
+        console.log(document.documentElement.clientHeight);
+        console.log(document.body.clientWidth);
+        console.log(document.body.clientHeight);
+        console.log(document.documentElement.offsetWidth);
+        console.log(document.documentElement.offsetHeight);
+        console.log(document.body.offsetWidth);
+        console.log(document.body.offsetHeight);
+    </script>
+</body>
+</html>

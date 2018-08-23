@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//Math是静态对象，已经被定义完成，无需创建
+		console.log(Math);
+
+		var n = 3.16;
+
+		console.log(Math.ceil(n));//向上取整
+		console.log(Math.floor(n));//向下取整
+		console.log(n.toFixed(1));//保留n位小数，四舍五入，返回值为字符串
+		console.log(Math.round(n));//四舍五入取整
+
+		console.log(Math.random());//随机0~1之间的小数，包括0不包括1
+
+		console.log(Math.min(43,34,5,1,9,3));//取参数中最小的数字
+		console.log(Math.max(43,34,5,1,9,3));//取参数中最大的数字
+
+		console.log(Math.pow(3,4));//参数：n,m  求n的m次方
+		console.log(Math.sqrt(9));//开平方
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

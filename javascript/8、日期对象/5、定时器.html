@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/date.js"></script>
+</head>
+
+<body>
+    <div id="time"></div>
+    <script>
+
+
+        /*
+            定时器；
+                循环定时器
+                    setInterval(执行逻辑,间隔时间);//返回值为定时器下标
+    
+                    clearInterval(定时器下标);
+                延时器
+                    setTimeout(执行逻辑,间隔时间);//返回值 定时器下标
+    
+                    clearTimeout(定时器下标);
+    
+                setInterval()会重复执行逻辑,setTimeout()只会执行一次
+        */
+
+        setInterval(function () {
+            time.innerText = parseDate(new Date());
+        }, 1000)
+
+    </script>
+</body>
+
+</html>

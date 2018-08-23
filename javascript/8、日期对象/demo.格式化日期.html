@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		console.log(parseDate(new Date()));
+
+		function parseDate(date){
+			return date.getFullYear()+"年"+add0(date.getMonth()+1)+"月"+add0(date.getDate())+"日"+" "+parseWeek(date.getDay())+" "+add0(date.getHours())+"时"+add0(date.getMinutes())+"分"+add0(date.getSeconds())+"秒"
+		}
+
+		function add0(n){
+			if(n<10) n="0"+n;
+			return n;
+		}
+
+		function parseWeek(n){
+			switch(n){
+				case 0:
+					return "星期日";
+				case 1:
+					return "星期一";
+				case 2:
+					return "星期二";
+				case 3:
+					return "星期三";
+				case 4:
+					return "星期四";
+				case 5:
+					return "星期五";
+				case 6:
+					return "星期六";
+				default:
+					return null;
+			};
+		}
+	</script>
+</body>
+</html>

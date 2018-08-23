@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        hr{
+            margin: 100px;
+        }
+        button{
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr>
+        
+        <button class="left" onclick="backTop()">返回顶部</button>
+        <script>
+            function backTop(){
+                var timer= setInterval(function(){
+                var scrollT=document.body.scrollTop;
+                
+                if(scrollT>0){
+                    scrollBy(0,-200);
+                }else{
+                    clearInterval(timer);
+                }
+                },10)
+            }
+        </script>
+        
+</body>
+</html>

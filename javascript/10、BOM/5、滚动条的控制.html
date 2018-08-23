@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        hr{
+            margin :100px 0;
+        }
+        button.left{
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+        button.right{
+            position: fixed;
+            right: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+        <hr><hr><hr><hr><hr><hr>
+    <button class="left" onclick="backTop()">滚动到顶部</button>
+    <button class="right" onclick="scroll100()">向上滚动100像素</button>
+
+    <script>
+        
+        /*
+            scrollTo(x,y)  将页面滚动到指定位置
+            scrollBy（x,y） 将页面滚动一定的距离
+        */
+        function backTop(){
+            scrollTo(0,0);
+        }
+        function scroll100(){
+            scrollBy(0,-100);
+        }
+    </script>
+</body>
+</html>

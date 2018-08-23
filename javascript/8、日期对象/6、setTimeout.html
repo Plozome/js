@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 30px;
+            background-color: chartreuse
+        }
+
+        #b_box {
+            width: 500px;
+            height: 200px;
+            background-color: darkorange;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="box" onmouseover="over()" onmouseout="out()"></div>
+    <div id="b_box" onmouseover="bover()" onmouseout="bout()"></div>
+    <script>
+        function over() {
+            b_box.style.display = "block";
+        }
+        function out() {
+            timer = setTimeout(function () {
+                b_box.style.display = "none";
+            }, 100);
+
+        }
+        function bover() {
+            b_box.style.display = "block";
+            clearTimeout(timer);
+        }
+        function bout() {
+            b_box.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

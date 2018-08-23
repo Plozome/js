@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#text{
+			color: #03ccbb;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="text"></h1>
+
+	<script>
+		var num = 5;
+		text.innerText = num;
+
+		setInterval(function(){
+			num--;
+			text.innerText = num;
+			if(num == 0){
+				location.href = "http://www.baidu.com"
+			}
+		},1000);
+
+	</script>
+</body>
+</html>

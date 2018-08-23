@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box {
+			text-align: center;
+		}
+
+		#box span {
+			display: inline-block;
+			width: 40px;
+			height: 60px;
+			background: no-repeat left top;
+		}
+
+		#box span.n0 {
+			background-image: url(images/0.png);
+		}
+
+		#box span.n1 {
+			background-image: url(images/1.png);
+		}
+
+		#box span.n2 {
+			background-image: url(images/2.png);
+		}
+
+		#box span.n3 {
+			background-image: url(images/3.png);
+		}
+
+		#box span.n4 {
+			background-image: url(images/4.png);
+		}
+
+		#box span.n5 {
+			background-image: url(images/5.png);
+		}
+
+		#box span.n6 {
+			background-image: url(images/6.png);
+		}
+
+		#box span.n7 {
+			background-image: url(images/7.png);
+		}
+
+		#box span.n8 {
+			background-image: url(images/8.png);
+		}
+
+		#box span.n9 {
+			background-image: url(images/9.png);
+		}
+
+		#box span.n- {
+			background-image: url(images/mh.png);
+		}
+	</style>
+</head>
+
+<body>
+	<div id="box">
+	</div>
+	<script>
+
+		box.innerHTML = createHtml(dateToStr(new Date()));
+
+		setInterval(function () {
+			box.innerHTML = createHtml(dateToStr(new Date()));
+		}, 300);
+
+		function dateToStr(date) {
+			return add0(date.getHours()) + ":" + add0(date.getMinutes()) + ":" + add0(date.getSeconds())
+		}
+
+		function add0(n) {
+			if (n < 10) n = "0" + n;
+			return n;
+		}
+
+		function createHtml(str) {
+
+			str = str.replace(/\:/g, "-");
+			//因为style里面冒号的类名是n-在下一步拼接的时候要和n一起拼接成n-;
+			// "<span class='n"+str.charAt(i)+"'></span>"
+			var result = "";
+			
+			for (var i = 0; i < str.length; i++) {
+				result += "<span class='n" + str.charAt(i) + "'></span>"
+			}
+
+			return result;
+
+		}
+
+	</script>
+</body>
+
+</html>

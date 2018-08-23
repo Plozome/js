@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//求2019年3月1日是星期几
+
+		console.log(getWeek(2011,1,11));
+
+		function getWeek(year,month,day){
+
+			var date = new Date(year,month-1,day);
+			
+			switch(date.getDay()){
+				case 0:
+					return "星期日";
+				case 1:
+					return "星期一";
+				case 2:
+					return "星期二";
+				case 3:
+					return "星期三";
+				case 4:
+					return "星期四";
+				case 5:
+					return "星期五";
+				case 6:
+					return "星期六";
+				default:
+					return null;
+			};
+
+		}
+	</script>
+</body>
+</html>

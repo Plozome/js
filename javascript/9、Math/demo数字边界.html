@@ -8,15 +8,17 @@
 </head>
 <body>
     <script>
-        var  str ="我爱北京天安门";
-        var str1="";
-        for(var i = str.length;i>=0;i--){
-                str1+= str.charAt(i)
-        }
-        console.log(str1);
-        
-        console.log(Math);
+        /*
+			随机生成一个数字： 0~1000
 
+			如果大于900，则取900
+			如果小于100，则取100
+		*/
+        var n =Math.floor( Math.random()*1001)
+
+        
+        n=Math.max(100,Math.min(900,n));
+        console.log(n);
     </script>
 </body>
 </html>
