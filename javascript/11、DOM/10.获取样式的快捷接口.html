@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			width: 100px;
+			height: 100px;
+			background: #03ccbb;
+			margin: 100px;
+			padding: 10px;
+			border: solid 10px #000;
+		}
+		hr{
+			margin: 100px 0;
+		}
+	</style>
+</head>
+<body>
+	<hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+	<div id="box"></div>
+	<script>
+		var eBox = document.getElementById('box');
+		console.log(eBox.clientWidth);//获取元素宽度，包含padding
+		console.log(eBox.clientHeight);//获取元素高度，包含padding
+
+		console.log(eBox.offsetWidth);//获取元素宽度，包含border、padding
+		console.log(eBox.offsetHeight);//获取元素高度，包含border、padding
+
+		//参考物：最近的拥有定位属性(值为relative/fixed/absolute)的父元素
+		console.log(eBox.offsetLeft);//获取元素左侧到参考物的距离
+		console.log(eBox.offsetTop);//获取元素顶部到参考物的距离
+
+		console.log(eBox.clientLeft);//获取元素左边框的宽度
+		console.log(eBox.clientTop);//获取元素上边框的高度
+	</script>
+</body>
+</html>

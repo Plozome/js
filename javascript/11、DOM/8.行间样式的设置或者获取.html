@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			padding-top:200px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box" style="padding-left: 200px;"></div>
+
+
+	<script>
+		/*
+			style属性用于获取或者设置行间样式
+		*/
+		var eBox = document.getElementById('box');
+
+		eBox.style.width = '100px';
+		eBox.style.height = '100px';
+		eBox.style.background = '#F90';
+		eBox.style.marginTop = "100px";
+		eBox.style['margin-left'] = "100px";
+
+		console.log(eBox.style.width);
+		console.log(eBox.style.paddingLeft);
+		console.log(eBox.style.paddingTop);
+	</script>
+</body>
+</html>

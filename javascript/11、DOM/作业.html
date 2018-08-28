@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .tap {
+            width: 950px;
+            height: 570px;
+            margin-top: 20px;
+        }
+
+        .btns {
+            border-bottom: 3px deepskyblue solid;
+            top: 10px;
+        }
+
+        .btns span {
+            height: 32px;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .btns p {
+            font-size: 18px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 10px;
+            display: inline-block;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
+        .dis>div {
+            height: 520px;
+            width: 950px;
+            background-color: white;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .dis div.active {
+            display: block;
+        }
+
+        .btns span.active {
+            background-color: #3AB1D1;
+        }
+
+        .top1 {
+            width: 430px;
+            height: 240px;
+            /* background-color:blue; */
+            float: left;
+            border: 1px darkgray solid;
+            margin-right: 16px;
+            margin-bottom: 16px;
+        }
+
+        .top2 {
+            width: 240px;
+            height: 240px;
+            /* background-color:blue; */
+            float: left;
+            border: 1px darkgray solid;
+
+            margin-bottom: 16px;
+        }
+
+        .top3 {
+            width: 240px;
+            height: 240px;
+            /* background-color:blue; */
+            float: right;
+            border: 1px darkgray solid;
+            margin-bottom: 16px;
+        }
+
+        .bottom1 {
+            width: 430px;
+            height: 240px;
+            /* background-color:blue; */
+            float: left;
+            border: 1px darkgray solid;
+            margin-right: 16px;
+        }
+        .bottom1 div{
+            float: left;
+        }
+        .bottom2 {
+            width: 240px;
+            height: 240px;
+            /* background-color:blue; */
+            float: left;
+            border: 1px darkgray solid;
+        }
+
+        .bottom3 {
+            width: 240px;
+            height: 240px;
+            /* background-color:blue; */
+            float: right;
+            border: 1px darkgray solid;
+        }
+
+        .dis div div:hover {
+            border-color: aqua
+        }
+        .top1 div{
+            float: left;
+        }
+        .txtDiv1{
+            width: 184px;
+            height: 120px;
+            text-align: left;
+            background-color: #3AB1D1;
+        }
+        .txtDiv1 p{
+            margin-left: 7px;
+            text-align: center;
+            font-size: 22px;
+            color: white;
+        }
+        .txtDiv2{
+            width: 184px;
+            height: 120px;
+            text-align: left;
+        }
+        .txtDiv2 p{
+            margin-left: 7px;
+            text-align: left;
+        }
+        .txtDiv3 p{
+            margin-left: 10px;
+            text-align: left;
+           font-size: 10px;
+        }
+        .txtDiv3 b{
+            margin-left: 10px;
+            text-align: left;
+           /* font-size: 10px; */
+        }
+        .txtDiv4{
+            width: 184px;
+            height: 100px;
+            text-align: left;
+            background-color: #3AB1D1;
+        }
+        .txtDiv4 p{
+            margin-left: 7px;
+            text-align: center;
+            font-size: 22px;
+            color: white;
+        }
+        .txtDiv5{
+            width: 184px;
+            height: 140px;
+            text-align: left;
+        }
+        .txtDiv5 p{
+            margin-left: 7px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tap">
+        <div class="btns">
+            <span class="active"><p>今日特惠</p> </span>
+            <span><p>特惠门票</p> </span>
+            <span><p>特惠一日游</p> </span>
+            <p style="float:right;margin:6px 10px"><a href="">更多&gt;&gt;</a></p>
+        </div>
+        <div class="dis">
+            <div class="active">
+                <div class="top1">
+                    <div><img src="img/img1.png" alt=""></div>
+                    <div class="txtDiv1"><p>北京皮影戏门票+自然博物馆（大小同价）</p></div>
+                    <div class="txtDiv2"><p>打开通往自然的大门，去探索大自然的奥秘</p><br> <b style="color:red;margin-left: 7px;font-size: 20px;">￥60</b></div>    
+                </div>
+                <div class="top2">
+                    <div><img src="img/img3.png" alt=""></div>
+                    <div class="txtDiv3"><b>北京温都水城两馆通票（...</b> <p>景色宜人，环境舒适</p><b style="color:red;margin-left: 7px;font-size: 20px;">￥128</b></div>
+                    
+                </div>
+                <div class="top3">
+                        <div><img src="img/img4.png" alt=""></div>
+                        <div class="txtDiv3"><b>北京出发一日游</b> <p>北京【去哪儿专线】北京八达岭长城...</p><b style="color:red;margin-left: 7px;font-size: 20px;">￥168</b></div>
+                </div>
+                <div class="bottom1">
+                        <div><img src="img/img2.png" alt=""></div>
+                        <div class="txtDiv4"><p>北京温都水城两馆通票(儿童票)</p></div>
+                        <div class="txtDiv5"><p>打开通往自然的大门，去探索大自然的奥秘</p><br><br><b style="color:red;margin-left: 7px;font-size: 20px;">￥29.9</b></div>    
+                          
+                </div>
+                <div class="bottom2">
+                        <div><img src="img/img5.png" alt=""></div>
+                        <div class="txtDiv3"><b>北京【随买随用】鸟巢C...</b> <p>感受2008北京奥运的辉煌</p><b style="color:red;margin-left: 7px;font-size: 20px;">￥58</b></div>
+                </div>
+                <div class="bottom3">
+                        <div><img src="img/img6.png" alt=""></div>
+                        <div class="txtDiv3"><b>北京【即买即用】天开寺...</b> <p>景色宜人，环境舒适</p><b style="color:red;margin-left: 7px;font-size: 20px;">￥24.9</b></div>
+                </div>
+            </div>
+            <div>
+                <div class="top1">11</div>
+                <div class="top2">22</div>
+                <div class="top3">33</div>
+                <div class="bottom1">44</div>
+                <div class="bottom2">55</div>
+                <div class="bottom3">66</div>
+            </div>
+            <div>
+                <div class="top1">111</div>
+                <div class="top2">222</div>
+                <div class="top3">333</div>
+                <div class="bottom1">444</div>
+                <div class="bottom2">555</div>
+                <div class="bottom3">666</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var btns = document.querySelectorAll('.btns span');
+        var divs = document.querySelectorAll('.dis>div');
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].index = i;
+            btns[i].onclick = function () {
+                for (var i = 0; i < btns.length; i++) {
+                    btns[i].className = "";
+                    divs[i].className = "";
+                }
+                this.className = "active";
+                divs[this.index].className = "active";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box">
+		<ul id="list">
+			<li>01</li>
+			<li>02</li>
+			<li>03</li>
+			<li>04</li>
+			<li>05</li>
+		</ul>
+		<ol>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ol>
+	</div>
+
+	<script>
+
+		/*
+			getElementById(id); 
+				通过id获取元素
+				document的直属方法
+
+			getElementsByTagName(tagname);
+				通过标记名称获取元素集合
+				所有节点都有的方法
+		*/
+		
+		var eBox = document.getElementById('box');//通过id获取元素
+
+		var lis = document.getElementsByTagName("li");//通过标记名称获取元素集合
+
+		var ulli = document.getElementById("list").getElementsByTagName("li");
+
+		var list = document.querySelector("#list");//通过选择器获取某个元素
+
+		var li = document.querySelector("#list li");//通过选择器获取某个元素
+
+		var allli = document.querySelectorAll("li");//通过选择器获取元素集合
+
+
+		console.log(eBox);
+		console.log(lis);
+		console.log(ulli);
+		console.log(list);
+		console.log(li);
+		console.log(allli)
+
+	</script>
+</body>
+</html>

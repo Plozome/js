@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="box">
+		<span>我是老大</span>
+	</div>
+
+	<script>
+	/*
+		document.createElement(tagName); 根据标记名称创建元素节点
+			新创建的元素并不会出现到DOM层。
+
+		父元素.appendChild(子元素); 在父元素中追加(在最后添加)子元素
+			子元素不一定是新创建的元素，也可以用于现有子元素的顺序改变
+
+		父元素.insertBefore(子元素,参考子元素); 
+			在父元素中的某个子元素(参考子元素)之前插入子元素。
+		
+		父元素.removeChild(子元素);
+			将子元素从DOM层中移除。
+	*/
+
+		var eBox = document.querySelector('.box');
+		var eP = document.createElement("p");
+		var eSpan = eBox.querySelector('span');
+		console.log(eBox);
+
+		eBox.appendChild(eP);
+
+		var eUl = document.createElement('ul');
+		eBox.insertBefore(eUl,eSpan);
+
+		eBox.removeChild(eSpan);
+
+
+		var eOl = document.createElement('ol');
+
+		eBox.replaceChild(eOl,eUl);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1></h1>
+
+	<script>
+		var eH1 = document.getElementsByTagName('h1')[0];
+
+		console.log(eH1.tagName);
+
+		eH1.innerHTML = '<i>我是h1</i>';
+
+		console.log(eH1.innerHTML);
+
+		console.log(eH1.outerHTML);
+
+		eH1.innerText = '<i>我是i</i>';
+
+		eH1.title = "标题、提示";
+
+		eH1.id = "box";
+
+		eH1.className = "box";
+	</script>
+</body>
+</html>

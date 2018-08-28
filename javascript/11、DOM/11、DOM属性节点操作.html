@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div></div>
+	<img src="" alt=""/>
+	<script>
+		/*
+			setAttribute  //添加自定义属性节点
+		*/
+		var eDiv = document.getElementsByTagName('div')[0];
+
+		//eDiv.className = "active";
+
+		eDiv.setAttribute("class","on");//设置属性节点
+
+		//设置自定义属性
+		eDiv.setAttribute("abc","asd");//设置属性节点
+
+		eDiv.abc = "qwer";//设置eDiv对象的属性
+
+		console.log(eDiv.getAttribute('abc'));
+
+		console.log(eDiv.abc);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.info_list{
+			width: 500px;
+			margin: 40px auto;
+			height: 349px;
+			overflow: hidden;
+			border: solid 1px #F90;
+		}
+		.info_list ul{
+			position: relative;
+			top: 0;
+		}
+		.info_list ul.move{
+			transition: all 1s linear;
+			top:-35px;
+		}
+		.info_list li{
+			line-height: 35px;
+			height: 35px;
+			overflow: hidden;
+			border-bottom: solid 1px #F90;
+			padding: 0 10px;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="info_list">
+		<ul>
+			<li>这是第01条重要信息，请保密</li>
+			<li>这是第02条重要信息，请保密</li>
+			<li>这是第03条重要信息，请保密</li>
+			<li>这是第04条重要信息，请保密</li>
+			<li>这是第05条重要信息，请保密</li>
+			<li>这是第06条重要信息，请保密</li>
+			<li>这是第07条重要信息，请保密</li>
+			<li>这是第08条重要信息，请保密</li>
+			<li>这是第09条重要信息，请保密</li>
+			<li>这是第10条重要信息，请保密</li>
+			<li>这是第11条重要信息，请保密</li>
+			<li>这是第12条重要信息，请保密</li>
+			<li>这是第13条重要信息，请保密</li>
+			<li>这是第14条重要信息，请保密</li>
+			<li>这是第15条重要信息，请保密</li>
+			<li>这是第16条重要信息，请保密</li>
+			<li>这是第17条重要信息，请保密</li>
+			<li>这是第18条重要信息，请保密</li>
+			<li>这是第19条重要信息，请保密</li>
+			<li>这是第20条重要信息，请保密</li>
+		</ul>
+	</div>
+	<script>
+		var eUl = document.querySelector(".info_list ul");
+		setInterval(function(){
+			
+			eUl.className = "move";
+
+			setTimeout(function(){
+				eUl.appendChild(eUl.children[0]);
+				eUl.className = "";
+			},1000);
+		},3000);
+	</script>
+</body>
+</html>
