@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .contextmenu {
+            width: 200px;
+            border: 1px solid #ff9900;
+            overflow: hidden;
+            position: absolute;
+            left:-10000px;
+            top: 0;
+        }
+
+        .contextmenu ul {
+            margin-bottom: -1px;
+        }
+
+        .contextmenu li {
+            background: deepskyblue;
+            line-height: 40px;
+            height: 40px;
+            overflow: hidden;
+            padding: 0 10px;
+            color: #fff;
+            border-bottom: 1px solid #ff9900;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contextmenu">
+        <ul>
+            <li>周润发</li>
+            <li>刘德华</li>
+            <li>赵丽颖</li>
+            <li>周星驰</li>
+            <li>渣渣辉</li>
+        </ul>
+    </div>
+    <script>
+        var ele = document.querySelector('.contextmenu');
+        var maxL = document.documentElement.clientWidth - ele.offsetWidth;
+        var maxT = document.documentElement.clientHeight - ele.offsetHeight;
+
+        document.oncontextmenu=function(e){
+            e=e||event;
+            e.preventDefault?e.preventDefault():e.returnValue=false;
+            var left=e.clientX;
+            var top=e.clientY;
+
+            left=Math.max(0,Math.min(maxL,left));
+            top=Math.max(0,Math.min(maxT,top));
+
+            ele.style.left=left+"px";
+            ele.style.top=top+"px";
+        }
+    </script>
+</body>
+
+</html>

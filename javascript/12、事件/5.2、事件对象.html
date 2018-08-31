@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            用户在触发事件后，浏览器就会监听到这个事件触发
+            这时，浏览器会生成一个事件对象，事件对象会保留一系列事件信息最后
+            ，将这个对象传递到事件处理中（IE会将事件对象定义到window的event属性下）
+
+
+            获取事件对象的方法：
+                高版本浏览器：
+                    通过为事件处理定义形参，来接收事件对象
+                IE低版本浏览器：
+                    通过window.event获取事件对象
+            
+            事件对象内包含的信息：
+                1、事件源（比如点击，就是点击的那个东西）
+                    高版本e.target
+                    IE低版本e.srcElement
+                2、鼠标的坐标
+                    clientX/clientY  鼠标到文档可视区边缘的距离
+                    offsetX/offsetY  鼠标到事件源的距离
+                    pageX/pageY      鼠标到文档边缘的距离
+                    screenX/screenY  鼠标到电脑屏幕边缘的距离
+                3、阻止冒泡的方法
+                    高版本浏览器
+                        e.stopPropagation()
+                    IE低版本浏览器
+                        e.cancelBubble=true
+                4、阻止事件默认行为的方法
+                    高版本浏览器
+                        e.preventDefault()
+                    IE低版本浏览器
+                        e.returnValue=false
+                    
+                    通用写法（已经被DOM废除）
+                        return false；
+        */
+        document.onclick=function(){
+            e=e||window.event;//获取事件对象的兼容写法
+            var ele=e.target||e.srcElement;
+            console.log(ele);
+        }
+    </script>
+</body>
+</html>

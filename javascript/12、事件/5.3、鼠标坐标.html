@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+			height: 100px;
+			background: #03ccbb;
+			margin: 0 auto;
+			margin-top:10000px;
+			border: 10px solid #000;
+			padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        var ele=document.querySelector('.box');
+
+        ele.onclick=function(e){
+            e=e||event;
+            console.log(e.clientX,e.clientY);//鼠标到文档可视区
+            console.log(e.offsetX,e.offsetY);//鼠标到事件源
+            console.log(e.pageX,e.pageY);//鼠标到文档
+        }
+    </script>
+</body>
+</html>

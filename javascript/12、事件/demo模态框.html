@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.tips{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 300px;
+			height: 50px;
+			line-height: 50px;
+			color: #FFF;
+			background: #F90;
+			border-radius: 10px;
+			text-align: center;
+			margin-left: -150px;
+			margin-top:-25px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button>提示</button>
+	<div class="tips">
+		<span>你好！我是提示</span>
+	</div>
+
+	<script>
+		/*
+			冒泡产生的条件：
+				1、相同的事件类型
+				2、父子关系
+		*/
+		var tips = document.querySelector('.tips');
+		var btn = document.querySelector('button');
+
+		btn.onclick = function(e){
+			e = e || event;
+			tips.style.display = "block";
+
+			e.stopPropagation?e.stopPropagation():e.cancelBubble = true;
+		}
+
+		document.onclick=function(){
+			tips.style.display = "none";
+		}
+	</script>
+</body>
+</html>

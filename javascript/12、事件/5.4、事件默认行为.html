@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            常见默认行为
+                鼠标右键菜单
+                表单提交
+                滚轮滚动页面
+                图片拖拽
+
+
+                文本选中（比较难）
+        */
+        document.oncontextmenu = function (e) {
+            e=e||event;
+            alert(123);
+
+            e.preventDefault?e.preventDefault():e.returnValue=false;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        span {
+            position: absolute;
+            left: -10000px;
+            top: 0;
+            background: #03ccbb;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            color: #FFF;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <span>我</span>
+    <span>爱</span>
+    <span>北</span>
+    <span>京</span>
+    <span>天</span>
+    <span>安</span>
+    <span>门</span>
+    <span>！</span>
+    <script>
+        var spans = document.getElementsByTagName("span");
+        document.onmousemove = function (e) {
+            e = e || event;
+            //     spans[0].style.left = e.clientX + "px";
+            //     spans[0].style.top = e.clientY + "px";
+            //     for (var i = 1; i < spans.length; i++) {
+            //         spans[i].style.left = spans[i - 1].offsetLeft + 22 + "px";
+            //         spans[i].style.top = spans[i - 1].offsetTop + "px";
+            //     }
+            for (var i = spans.length - 1; i >= 0; i--) {
+                if (i != 0) {
+                    spans[i].style.left = spans[i - 1].offsetLeft + 22 + "px";
+                    spans[i].style.top = spans[i - 1].offsetTop + "px";
+                } else {
+                    spans[i].style.left = e.clientX + "px";
+                    spans[i].style.top = e.clientY + "px";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

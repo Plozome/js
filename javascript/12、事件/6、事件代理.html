@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+        <li>04</li>
+        <li>05</li>
+        <li>06</li>
+        <li>07</li>
+        <li>08</li>
+        <li>09</li>
+        <li>10</li>
+    </ul>
+    <script>
+        var eUl = document.getElementsByTagName("ul")[0];
+        var lis = eUl.children;
+
+        //事件代理（事件委托）的原理是冒泡
+        //点击li显示li的值
+        eUl.onclick = function (e) {
+            e = e || window.event;
+            var ele = e.target || e.srcElemnt;
+            if (ele == this) return false;
+            console.log(ele.innerHTML);
+        }
+        //传统写法
+        // for(var i =0;i<lis.length;i++){
+        //        lis[i].onclick =function(){
+        //            alert(this.innerHTML);
+        //        }
+        // }
+    </script>
+</body>
+
+</html>

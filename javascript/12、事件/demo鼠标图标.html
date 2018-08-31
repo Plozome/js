@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .pointer{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #ff9900;
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin-left: -15px;
+            margin-top: -15px;
+        }
+        html{
+            cursor: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="pointer"></div>
+    <script>
+        var po=document.getElementsByTagName('div')[0];
+
+        document.onmousemove=function(e){
+            e=e||window.event;
+            po.style.left=e.clientX+"px";
+            po.style.top=e.clientY+"px";
+        }
+    </script>
+</body>
+</html>

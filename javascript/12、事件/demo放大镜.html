@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .zoom {
+            width: 200px;
+            height: 200px;
+            margin-left: 100px;
+            margin-top: 1000px;
+            margin-bottom: 500px;
+            position: relative;
+            border: solid 1px #000000;
+        }
+
+        .big_area {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: -10000px;
+            top: -1px;
+            border: solid 1px #000000;
+            overflow: hidden;
+        }
+
+        .big_area img {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .mask {
+            position: absolute;
+            left: -10000px;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background: #000000;
+            opacity: 0.65;
+            filter: alpha(opacity=65);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="zoom">
+        <div class="small_area">
+            <img src="images/zoom.jpg" width="200px" height="200px" ;>
+            <span class="mask"></span>
+        </div>
+        <div class="big_area">
+            <img src="images/zoom.jpg" width="620px" height="620px">
+        </div>
+    </div>
+    <script>
+
+        //获取元素
+        var zoom = document.querySelector('.zoom');
+        var small = document.querySelector('.small_area');
+        var big = document.querySelector('.big_area');
+        var simg = document.querySelector('.small_area img');
+        var bimg = document.querySelector('.big_area img');
+        var mask = document.querySelector('.mask');
+
+        //计算mask区域的宽和高 利用公式 遮罩层 = 大图显示区*(小图/大图);
+        mask.style.width = big.clientWidth * (simg.offsetWidth / bimg.offsetWidth) + "px";
+        mask.style.height = big.clientHeight * (simg.offsetHeight / bimg.offsetHeight) + "px";
+        //计算最大值限制mask区域的活动范围为小图区域
+        var maxW = simg.clientWidth - mask.offsetWidth;
+        var maxH = simg.clientHeight - mask.offsetHeight;
+
+        //给小图区域添加鼠标进入和离开事件
+        small.onmouseenter = function () {
+            mask.style.left = 0;
+            big.style.left = 210 + "px";
+        }
+        small.onmouseleave = function () {
+            mask.style.left = -10000 + "px";
+            big.style.left = -10000 + "px";
+        }
+        //给鼠标添加移动事件
+        small.onmousemove = function (e) {
+            e = e || event;
+            //计算mask跟随随便出现的位置 即偏移量，使鼠标在mask中间
+            //使用pageX/Y是为了避免当可视区域并不是整个页面区域时，会出现mask不能在整个
+            //小图区域运动
+            var nLeft = e.pageX - zoom.offsetLeft - zoom.clientLeft - mask.offsetWidth / 2;
+            var nTop = e.pageY - zoom.offsetTop - zoom.clientTop - mask.offsetHeight / 2;
+
+            //限制偏移量的范围，使不跑出小图范围
+            nLeft = Math.max(0, Math.min(maxW, nLeft));
+            nTop = Math.min(maxH, Math.max(0, nTop));
+
+            mask.style.left = nLeft + "px";
+            mask.style.top = nTop + "px";
+
+            //计算大图随着mask移动的偏移量 公式 大图偏移量 = (大图-大图显示区)*(遮罩层偏移量/(小图-遮罩层))
+            bimg.style.left = -(bimg.offsetWidth - big.clientWidth) * (nLeft / (simg.clientWidth - mask.offsetWidth)) + "px";
+            bimg.style.top = -(bimg.offsetHeight - big.clientHeight) * (nTop / (simg.clientHeight - mask.offsetHeight)) + "px";
+
+           
+        }
+    </script>
+</body>
+
+</html>

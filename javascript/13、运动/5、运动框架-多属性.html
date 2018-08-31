@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box {
+			position: absolute;
+			left: 1000px;
+			top: 0;
+			width: 100px;
+			height: 100px;
+			background: #F90;
+		}
+
+		/*html:hover .box{
+			left: 1000px;
+		}*/
+	</style>
+	<script>
+		/*
+			起点 0
+			终点 1000
+
+			运动时长 3000
+			
+			起始时间
+			当前时间
+
+
+			已过时间/运动时长 = 已过距离/总距离
+
+			已过距离 = (终点-起点)*((当前时间-起始时间)/运动时长)；
+
+		*/
+	</script>
+</head>
+
+<body>
+	<div class="box">
+
+	</div>
+
+	<button onclick="move(ele, {left:100,top:100}, 3000);">动起来</button>
+
+	<script>
+		var ele = document.querySelector('.box');
+		//props里存的是
+		//{left:100,top:100,...}
+		function move(ele, props, duration) {
+			if (ele.timer) return false;
+			//获取终点位置
+			var ends = {};
+			for (var attr in props) {
+				ends[attr] = props[attr];
+			}
+			//获取起点位置
+			var starts = {};
+			for (var attr in props) {
+				starts[attr] = parseInt(getStyle(ele)[attr]);
+				console.log(starts);
+			}
+			//获取css样式表里的值
+			function getStyle(ele) {
+				return window.getComputedStyle ? window.getComputedStyle(ele, null) : ele.currentStyle;
+			}
+
+			var date = new Date();//运动起始时间
+
+			ele.timer = setInterval(function () {
+				var scale = (new Date() - date) / duration;
+				if (scale > 1) {
+					scale = 1;
+					clearInterval(ele.timer);
+					ele.timer = null;
+				}
+				for (var attr in props) {
+
+					ele.style[attr] = starts[attr] + (ends[attr] - starts[attr]) * scale + "px";
+				}
+			}, 10);
+
+		}
+
+
+	</script>
+</body>
+
+</html>

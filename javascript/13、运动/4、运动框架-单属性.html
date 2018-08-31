@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			position: absolute;
+			left: 1000px;
+			top: 0;
+			width: 100px;
+			height: 100px;
+			background: #ff9900;
+		}
+	</style>
+	
+</head>
+<body>
+	<div class="box">
+		
+	</div>
+
+	<button onclick="move(ele, 100, 3000);">动起来</button>
+
+	<script>
+		var ele = document.querySelector('.box');
+
+		function move(ele, target, duration){
+			var start = ele.offsetLeft;//起点
+			var date = new Date();//运动起始时间
+			clearInterval(ele.timer);
+			ele.timer = setInterval(function(){
+				var scale = (new Date()-date)/duration;
+				if(scale > 1){
+					scale = 1;
+					clearInterval(ele.timer);
+				}
+				var nLeft = (target-start)*scale;
+				ele.style.left = start + nLeft + "px";
+
+			},10);
+		}
+
+
+	</script>
+</body>
+</html>

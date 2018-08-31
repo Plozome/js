@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            position: absolute;
+            left: 1000px;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background: #ff9900;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <button onclick="fn()">动起来</button>
+    <script>
+        var ele = document.querySelector('.box');
+
+        function move(ele, props, duration, fn) {
+            if(ele.timer) return false;
+
+            duration = duration || 1000;
+
+            var ends = {};
+            for (var attr in props) {
+                ends[attr] = props[attr];
+            }
+
+            var starts = {};
+            for (var attr in props) {
+                starts[attr] = parseInt(getStyle(ele)[attr]);
+            }
+            function getStyle(ele) {
+                return window.getComputedStyle ? window.getComputedStyle(ele, null) : ele.currentStyle;
+            }
+
+            var date = new Date();
+            ele.timer = setInterval(function () {
+                var scale = (new Date() - date) / duration;
+                if (scale > 1) {
+                    scale = 1;
+                    clearInterval(ele.timer);
+                    ele.timer = null;
+                    if (fn){
+                        fn();
+                    }
+                }
+                for (var attr in props) {
+                    ele.style[attr] = starts[attr] + (ends[attr] - starts[attr]) * scale + "px";
+                }
+            }, 10)
+
+        }
+        function fn() {
+            move(ele, { left: 100, top: 100 }, 3000,function(){
+                move(ele,{
+                    left:200,
+                    top:300,
+                    width:300
+                },2000
+                );
+            });
+        }
+    </script>
+</body>
+
+</html>

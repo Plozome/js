@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        /*
+            DOM0解绑
+                让事件处理指向null
+            
+            DOM2解绑
+                ele.removeEventListener(事件类型，事件处理);
+                ele.detachEvent(事件句柄，事件处理);
+
+        */
+        var eBtn=document.getElementById("btn");
+        eBtn.onclick=function(){
+            alert(789);
+        }
+        eBtn.onclick=null;
+
+        //DOM2级应保证事件处理为同一个
+        var fn=function(){
+            alert(123);
+        };
+        // eBtn.attachEvent('onclick',fn);  IE的
+        // eBtn.detachEvent('onclick',fn);
+
+
+        eBtn.addEventListener('click',fn,false);
+        eBtn.removeEventListener('click',fn);
+    </script>
+</body>
+</html>

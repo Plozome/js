@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="console.log(123)" id="btn">按钮</button>
+
+    <script>
+        /*
+            DOM规范第一个版本规定的事件处理绑定方法，称为DOM0级事件绑定
+            DOM规范第二个版本规定的事件处理绑定方法，称为DOM2级事件绑定
+
+
+
+            DOM0
+                为html标记通过事件句柄绑定事件处理
+                通过事件句柄为DOM元素绑定事件处理
+                两者会相互覆盖
+            
+            DOM2
+                通过addEventListener方法，为DOM元素绑定事件处理，添加事件侦听
+                    addEventListener(事件类型，事件处理，是否捕获);
+                可以通过DOM2级为同一元素的同一事件类型绑定多个事件处理
+
+                IE 
+                    attachEvent(事件句柄，事件处理);//不支持捕获
+        */
+        var eBtn = document.getElementById('btn');
+        eBtn.onclick = function () {
+            console.log(456);
+        }
+        // eBtn.attachEvent('onclick',function(){
+        //     console.log("attach")
+        // });
+        eBtn.addEventListener('click',function(){
+            console.log(789);
+        },false);
+        eBtn.addEventListener('click',function(){
+            console.log(110);
+        },false)
+    </script>
+</body>
+
+</html>

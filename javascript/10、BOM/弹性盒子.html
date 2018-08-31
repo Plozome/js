@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            text-align: center;
+        }
+
+
+
+        /* 第一种利用calc计算 */
+
+        .wrapper1,
+        .wrapper2,
+        .wrapper3,
+        .wrapper4,
+        .wrapper5 {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            line-height: 200px;
+            overflow: hidden;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .wrapper1 .custom {
+            width: 200px;
+            border-right: 1px solid white;
+        }
+
+        .wrapper1 .auto {
+            width: calc(100% - 201px);
+        }
+
+        .wrapper1 .custom,
+        .wrapper1 .auto {
+            height: 200px;
+            float: left;
+            color: white;
+            background: black;
+        }
+
+
+
+        /* 第二种利用绝对定位 */
+
+
+
+        .wrapper2 .custom,
+        .wrapper2 .auto {
+            height: 200px;
+            color: white;
+            background: black;
+            position: absolute;
+            top: 31px;
+        }
+
+        .wrapper2 .custom {
+            width: 200px;
+            border-right: 1px solid white;
+            left: 0;
+            z-index: 1;
+        }
+
+        .wrapper2 .auto {
+            left: 0;
+            width: 100%;
+            padding-left: 200px;
+            box-sizing: border-box;
+        }
+
+
+
+        /* 第三种利用flex */
+
+        .wrapper3 {
+            display: flex;
+            flex: 1;
+        }
+
+        .wrapper3 .custom {
+            width: 200px;
+            height: 200px;
+            flex: none;
+            border-right: 1px solid white;
+            color: white;
+            background: black;
+        }
+
+        .wrapper3 .auto {
+            flex: 1;
+            height: 200px;
+            color: white;
+            background: black;
+        }
+
+
+
+        /* 第四种表格 */
+
+        .wrapper4 {
+            display: table;
+        }
+
+        .wrapper4 .custom,
+        .wrapper4 .auto {
+            display: table-cell;
+            background: black;
+            color: white;
+        }
+
+        .wrapper4 .custom {
+            width: 200px;
+            height: 200px;
+            border-right: 1px solid white;
+        }
+
+        .wrapper4 .auto {
+            width: auto;
+            height: 100%;
+        }
+
+
+
+        /* 第五种BFC */
+
+        .wrapper5 .custom {
+            width: 200px;
+            height: 200px;
+            float: left;
+            border-right: 1px solid white;
+        }
+
+        .wrapper5 .auto {
+            height: 200px;
+        }
+
+        .wrapper5 .custom,
+        .wrapper5 .auto {
+            background: black;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2>第一种</h2>
+    <div class="wrapper1">
+        <div class="custom">
+            <p>我是自定义</p>
+        </div>
+        <div class="auto">
+            <p>我是自适应</p>
+        </div>
+    </div>
+
+
+
+    <h2>第二种</h2>
+
+    <div class="wrapper2">
+        <div class="custom">
+            <p>我是自定义</p>
+        </div>
+
+        <div class="auto">
+            <p>我是自适应</p>
+        </div>
+
+    </div>
+
+
+
+    <h2>第三种</h2>
+
+    <div class="wrapper3">
+        <div class="custom">
+            <p>我是自定义</p>
+        </div>
+        <div class="auto">
+            <p>我是自适应</p>
+        </div>
+
+    </div>
+
+
+
+
+    <h2>第四种</h2>
+
+    <div class="wrapper4">
+        <div class="custom">
+            <p>我是自定义</p>
+        </div>
+
+        <div class="auto">
+            <p>我是自适应</p>
+        </div>
+
+    </div>
+
+
+
+    <h2>第五种</h2>
+
+    <div class="wrapper5">
+        <div class="custom">
+            <p>我是自定义</p>
+        </div>
+        <div class="auto">
+            <p>我是自适应</p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

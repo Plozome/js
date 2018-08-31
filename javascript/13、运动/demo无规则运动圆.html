@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: #03ccbb;
+            border-radius: 50%;
+        }
+    </style>
+    <script src="move.js"></script>
+</head>
+
+<body>
+    <script>
+        document.onclick = function (e) {
+
+            e = e || event;
+            
+            var ele = document.createElement('div');
+            document.body.appendChild(ele);
+
+            ele.style.left = e.clientX - 10 + "px";
+            ele.style.top = e.clientY - 10 + "px";
+
+            //随机大小
+            var width = parseInt(Math.random() * 21) + 20;
+            ele.style.width = width + "px";
+            ele.style.height = width + "px";
+            //随机颜色
+            ele.style.background = "rgb(" + parseInt(Math.random() * 256) + "," + parseInt(Math.random() * 256) + "," + parseInt(Math.random() * 256) + ")"
+
+            
+
+            var maxW = document.documentElement.clientWidth - ele.offsetWidth;
+            var maxH = document.documentElement.clientHeight - ele.offsetHeight;
+
+            function repeat() {
+                var left = parseInt(Math.random() * maxW);
+                var top = parseInt(Math.random() * maxH);
+                move(ele, { left: left, top: top }, 1000,
+                    function () {
+                        repeat();
+                    });
+            }
+            repeat();
+        }
+    </script>
+</body>
+
+</html>
