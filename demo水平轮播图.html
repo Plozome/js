@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="move.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .slider {
+            width: 520px;
+            height: 280px;
+            border: solid 2px #000000;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            line-height: 280px;
+            /*配合.dot使span在底部*/
+        }
+
+        .slider ul {
+            width: 10000px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+
+        .slider ul li {
+            float: left;
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            opacity: 0.65;
+            background: #000000;
+            z-index: 1;
+            top: 50%;
+            margin-top: -15px;
+            /* 为了在正中间 */
+            line-height: 30px;
+            /*行高不能忘记，不然里面的值会随着父元素的行高动*/
+            text-align: center;
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: default;
+
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .dot {
+            display: inline-block;
+            /*为了使span在底部需要配合.slider设置的行高*/
+            vertical-align: bottom;
+            /*因为span个数不确定而且是行间元素*/
+            margin-bottom: 10px;
+        }
+
+        .dot span {
+            float: left;
+            width: 10px;
+            height: 10px;
+            background: #03ccbb;
+            margin: 3px;
+            border-radius: 50%;
+        }
+
+        .dot span.active {
+            background: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <ul>
+            <li><img src="images/1.jpg" alt=""></li>
+            <li><img src="images/2.jpg" alt=""></li>
+            <li><img src="images/3.jpg" alt=""></li>
+            <li><img src="images/4.jpg" alt=""></li>
+            <!--为了实现视觉上无缝轮播第四步添加 -->
+            <li><img src="images/1.jpg" alt=""></li>
+        </ul>
+        <div class="prev"><img src="images/lt.png" alt=""></div>
+        <div class="next"><img src="images/bt.png" alt=""></div>
+        <div class="dot">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <script>
+        var index = 0;
+        var eSlider = document.querySelector('.slider');
+        var eUl = document.querySelector('.slider ul');
+        var prev = document.querySelector('.prev');
+        var next = document.querySelector('.next');
+        var dots = document.querySelectorAll('.dot span');
+
+        //第一步，效果是四个图片轮播无任何互动
+        /*setInterval(function(){
+            index++;
+			if(index == eUl.children.length){
+				index=0;
+            }
+            move(eUl,{
+				left:-index*eSlider.clientWidth
+			},300);
+        },1000)*/
+
+        //第二步，添加鼠标碰到图片时停止轮播，离开时继续轮播，并将复用代码封装
+        /* eSlider.timer = setInterval(fnNext,1000); 
+         
+         eSlider.onmouseenter=function(){
+             clearInterval(eSlider.timer);
+         }
+ 
+         eSlider.onmouseleave=function(){
+             eSlider.timer = setInterval(fnNext,1000);
+         }
+         
+         function fnNext(){
+             index++;
+             if(index == eUl.children.length){
+                 index=0;
+             }
+             fnMove();
+         }
+         function fnMove(){
+             move(eUl,{
+                 left:-index*eSlider.clientWidth
+             },300);
+         }*/
+        //第三步，添加向上和向下选择和小圆点
+        /* eSlider.timer = setInterval(fnNext,1000); 
+         
+         eSlider.onmouseenter=function(){
+             clearInterval(eSlider.timer);
+         }
+ 
+         eSlider.onmouseleave=function(){
+             eSlider.timer = setInterval(fnNext,1000);
+         }
+         
+         prev.onclick=fnPrev;
+         next.onclick=fnNext
+ 
+         function fnPrev(){
+             index--;
+             if(index<0){
+                 index=eUl.children.length-1;
+             }
+             fnMove();
+         }
+ 
+         function fnNext(){
+             index++;
+             if(index == eUl.children.length){
+                 index=0;
+             }
+             fnMove();
+         }
+         function fnMove(){
+             //小圆点的颜色变
+             for(var i=0;i<dots.length;i++){
+                 dots[i].className="";
+             }
+             dots[index].className="active";
+             //调用move.jsde move(ele,props,duration,fn)函数进行运动
+             move(eUl,{
+                 left:-index*eSlider.clientWidth
+             },300);
+         }*/
+        //第四步，实现轮播图无缝轮播 给小圆点加点击事件（最后结果）
+
+        eSlider.timer = setInterval(fnNext, 1000);
+
+        eSlider.onmouseenter = function () {
+            clearInterval(eSlider.timer);
+        }
+
+        eSlider.onmouseleave = function () {
+            eSlider.timer = setInterval(fnNext, 1000);
+        }
+        //给小圆点添加点击事件
+        for(var i=0;i<dots.length;i++){
+            dots[i].index=i;
+            dots[i].onclick=function(){
+                index=this.index;
+                fnMove();
+            }
+        }
+        /*
+            无缝轮播
+                当轮播图下标超过最大下标(eUl.children.length-1)时
+                    将index设置为第二张图片的下标 1
+                    将eUl的left值设置为0；
+       
+                当轮播图下标小于0时
+                    将index设置为倒数第二张图片的下标(eUl.children.length-2);
+                    将eUl的left值设置为-(eUl.children.length-1)*eSlider.clientWidth
+       
+       
+               */
+        prev.onclick = fnPrev;
+        next.onclick = fnNext
+
+        function fnPrev() {
+            index--;
+            // 当轮播图下标小于0时
+            //    将index设置为倒数第二张图片的下标(eUl.children.length-2);
+            //    将eUl的left值设置为-(eUl.children.length-1)*eSlider.clientWidth
+            if (index < 0) {//小于最小下标
+                index = eUl.children.length - 2;
+                eUl.style.left=-(index+1)*eSlider.clientWidth+"px";
+            }
+            fnMove();
+        }
+
+        function fnNext() {
+            index++;
+            
+            // 当轮播图下标超过最大下标(eUl.children.length-1)时
+            //    将index设置为第二张图片的下标 1
+            //    将eUl的left值设置为0；
+            if (index == eUl.children.length) {//超过最大下标
+                index = 1;
+                eUl.style.left=0;
+            }
+            fnMove();
+        }
+        function fnMove() {
+            //因为有五个图片和四个小圆点，第五张图片和第一张一样所以
+            //将第五张图片时第五个小圆点变色变成第一个小圆点变色
+            var num=index;//正常时num和index相等
+            if(index==dots.length){
+                num=0;
+            }
+            //小圆点的颜色变
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].className = "";
+            }
+            dots[num].className = "active";
+
+            //调用move.jsde move(ele,props,duration,fn)函数进行运动
+            move(eUl, {
+                left: -index * eSlider.clientWidth
+            }, 300);
+        }
+    </script>
+</body>
+
+</html>

@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+    <button>123</button>
+    
     <script>
         function addEvent(ele,eventType,fn){
             if(ele.addEventListener){
@@ -22,6 +24,11 @@
                 ele.detachEvent("on"+eventType,fn);
             }
         }
+        function fn(){
+            alert(123);
+        }
+        var ele=document.querySelector('button')
+        addEvent(ele,'click',fn);
     </script>
 </body>
 </html>

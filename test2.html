@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: deepskyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        var ele = document.querySelector('.box');
+
+        var maxW = document.documentElement.clientWidth - ele.offsetWidth;
+        var maxH = document.documentElement.clientHeight - ele.offsetHeight;
+
+        var speed = 10;
+        setInterval(function () {
+            var left=ele.offsetLeft + speed;
+            if (left > maxW || left < 0) {
+                speed *= -1
+            }
+            ele.style.left =left+ "px";
+            ele.style.top=Math.abs(Math.sin(left)*500)+"px";
+        }, 10);
+    </script>
+</body>
+
+</html>
